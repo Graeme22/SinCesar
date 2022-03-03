@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Without Ceasing</string>
+    <string name="start_key" translatable="false">start_key</string>
+    <string name="end_key" translatable="false">end_key</string>
+    <string name="notify_key" translatable="false">notify_key</string>
+    <string name="update_prayer">Update Prayer</string>
+    <string name="save_prayer">Save Prayer</string>
+    <string name="toast_updated">Prayer updated.</string>
+    <string name="toast_added">Prayer added.</string>
+    <string name="toast_deleted">Prayer deleted.</string>
+    <string name="notification_count">Number of notifications per day</string>
+    <string name="latest_notification_time">Latest notification time</string>
+    <string name="earliest_notification_time">Earliest notification time</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="notification_frequency">Notification frequency</string>
+    <string name="prayer_name">Prayer name</string>
+    <string name="prayer_description">Prayer description</string>
+    <string name="permanent">Permanent</string>
+    <string name="expires">Expires</string>
+    <string name="fixed_number">Fixed number</string>
+    <string name="settings_saved">Settings saved.</string>
+    <string name="channel_name" translatable="false">sincesar</string>
+    <string name="channel_description" translatable="false">Prayer notifications for sincesar</string>
+</resources>

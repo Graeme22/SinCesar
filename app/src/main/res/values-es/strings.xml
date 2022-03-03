@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sin Cesar</string>
+    <string name="update_prayer">Actualizar Oración</string>
+    <string name="save_prayer">Guardar Oración</string>
+    <string name="toast_updated">Oración actualizada.</string>
+    <string name="toast_added">Oración guardada.</string>
+    <string name="toast_deleted">Oración elimindada.</string>
+    <string name="notification_count">Número de notificaciones al día</string>
+    <string name="latest_notification_time">Tiempo más tarde para notificaciones</string>
+    <string name="earliest_notification_time">Tiempo más temprano para notificaciones</string>
+    <string name="save_changes">Guardar Cambios</string>
+    <string name="notification_frequency">Frecuencia de notificación</string>
+    <string name="prayer_name">Nombre de oración</string>
+    <string name="prayer_description">Descripción de oración</string>
+    <string name="permanent">Permanente</string>
+    <string name="expires">Expira</string>
+    <string name="fixed_number">Número fijo</string>
+    <string name="settings_saved">Configuración guardada.</string>
+</resources>
