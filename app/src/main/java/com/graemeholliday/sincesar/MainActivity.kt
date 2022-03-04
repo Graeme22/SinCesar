@@ -20,6 +20,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 val CHANNEL_ID: String = "50288"
 
+fun createAlarm(context: Context) {
+    val manager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    val pendingIntent = Intent(context, AlarmReceiver::class.java).let { intent ->
+        PendingIntent.getBroadcast(context, 0, intent, 0)
+    }
+    manager.setRepeating(AlarmManager.RTC, SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_FIFTEEN_MINUTES, AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent)
+}
+
 class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInterface {
     //on below line we are creating a variable for our recycler view, exit text, button and viewmodal.
     lateinit var viewModel: PrayerViewModel
@@ -36,7 +44,7 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInt
         bar = findViewById(R.id.toolbar)
 
         createNotificationChannel()
-        createAlarm()
+        createAlarm(this)
 
         //on below line we are setting layout manager to our recycler view.
         notesRV.layoutManager = LinearLayoutManager(this)
@@ -106,13 +114,5 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInt
             val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
-    }
-
-    private fun createAlarm() {
-        val manager = this.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val pendingIntent = Intent(this, AlarmReceiver::class.java).let { intent ->
-            PendingIntent.getBroadcast(this, 0, intent, 0)
-        }
-        manager.setRepeating(AlarmManager.RTC, SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_FIFTEEN_MINUTES, AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent)
     }
 }

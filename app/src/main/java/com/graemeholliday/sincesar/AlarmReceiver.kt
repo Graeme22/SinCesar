@@ -1,11 +1,9 @@
 package com.graemeholliday.sincesar
 
 import android.app.AlarmManager
-import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.os.SystemClock
 import android.preference.PreferenceManager
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -19,11 +17,9 @@ import java.util.*
 
 class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        if(intent.action == "android.intent.action.BOOT_COMPLETED") {
-            val manager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-            val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
-            manager.setRepeating(AlarmManager.RTC, SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_FIFTEEN_MINUTES, AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent)
-        } else {
+        if(intent.action == "android.intent.action.BOOT_COMPLETED")
+            createAlarm(context)
+        else {
             val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
             val notifications: Int = sharedPrefs.getInt(context.getString(R.string.notify_key), 5)
             val startTime: String? = sharedPrefs.getString(context.getString(R.string.start_key), "09:00")
